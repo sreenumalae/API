@@ -14,7 +14,7 @@ params ={
 r = pricing.PricingStream(accountID=accountID, params=params)
 rv = api.request(r)
 maxrecs = 100
-for ticks in r:
-    print(json.dumps(R, indent=4),",")
+for ticks in rv:
+    print(json.dumps(ticks, indent=4),",")
     if maxrecs == 0:
         r.terminate("maxrecs records received")
